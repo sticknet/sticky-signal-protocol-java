@@ -239,7 +239,7 @@ public class SessionCipher {
         throw new NoSessionException("No session for: " + remoteAddress);
       }
 
-      SessionRecord sessionRecord = sessionStore.loadSession(remoteAddress)f;
+      SessionRecord sessionRecord = sessionStore.loadSession(remoteAddress);
       byte[]        plaintext     = decrypt(sessionRecord, ciphertext);
 
       if (!identityKeyStore.isTrustedIdentity(remoteAddress, sessionRecord.getSessionState().getRemoteIdentityKey(), IdentityKeyStore.Direction.RECEIVING)) {
