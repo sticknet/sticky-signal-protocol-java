@@ -46,7 +46,7 @@ import javax.crypto.spec.SecretKeySpec;
  * distributed to each member of the group, this class can be used for all subsequent encrypt/decrypt
  * operations within that session (ie: until group membership changes).
  *
- * @author Moxie Marlinspike
+ * @author Omar Basem
  *
  */
 

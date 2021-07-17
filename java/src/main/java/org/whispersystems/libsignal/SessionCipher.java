@@ -184,10 +184,6 @@ public class SessionCipher {
 
       sessionStore.storeSession(remoteAddress, sessionRecord);
 
-      if (unsignedPreKeyId.isPresent()) {
-        preKeyStore.removePreKey(unsignedPreKeyId.get());
-      }
-
       return plaintext;
     }
   }
@@ -239,7 +235,7 @@ public class SessionCipher {
         throw new NoSessionException("No session for: " + remoteAddress);
       }
 
-      SessionRecord sessionRecord = sessionStore.loadSession(remoteAddress);
+      SessionRecord sessionRecord = sessionStore.loadSession(remoteAddress)f;
       byte[]        plaintext     = decrypt(sessionRecord, ciphertext);
 
       if (!identityKeyStore.isTrustedIdentity(remoteAddress, sessionRecord.getSessionState().getRemoteIdentityKey(), IdentityKeyStore.Direction.RECEIVING)) {

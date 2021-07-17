@@ -25,7 +25,7 @@ import static org.whispersystems.libsignal.state.StorageProtos.SenderKeyStateStr
 /**
  * Represents the state of an individual SenderKey ratchet.
  *
- * @author Moxie Marlinspike
+ * @author Omar Basem
  */
 public class SenderKeyState {
 
